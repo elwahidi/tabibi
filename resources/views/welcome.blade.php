@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+ 
 @section('content')
     <!-- Section: inner-header -->
     <section class="inner-header divider parallax layer-overlay overlay-dark-8" data-bg-img="images/bg/bg1.jpg"

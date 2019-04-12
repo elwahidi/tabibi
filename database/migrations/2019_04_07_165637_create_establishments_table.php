@@ -26,13 +26,13 @@ class CreateEstablishmentsTable extends Migration
             $table->unsignedBigInteger('visit_nbr')->nullable();
 
             $table->unsignedBigInteger('city_id')->index();
-            $table->foreign('city_id')->references('city_id')->on('cities');
+            $table->foreign('city_id')->references('id')->on('cities');
 
             $table->unsignedBigInteger('owner_id')->index();
-            $table->foreign('owner_id')->references('owner_id')->on('users');
+            $table->foreign('owner_id')->references('id')->on('users');
 
             $table->unsignedBigInteger('creator_id')->index();
-            $table->foreign('creator_id')->references('creator_id')->on('users');
+            $table->foreign('creator_id')->references('id')->on('users');
 
             $table->timestamps();
         });
@@ -41,11 +41,11 @@ class CreateEstablishmentsTable extends Migration
             $table->bigIncrements('id');
 
             $table->unsignedBigInteger('establishment_id')->index();
-            $table->foreign('establishment_id')->references('establishment_id')
+            $table->foreign('establishment_id')->references('id')
                 ->on('establishments');
 
             $table->unsignedBigInteger('doctor_id')->index();
-            $table->foreign('doctor_id')->references('doctor_id')
+            $table->foreign('doctor_id')->references('id')
                 ->on('users');
         });
 

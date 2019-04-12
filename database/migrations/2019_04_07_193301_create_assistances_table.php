@@ -17,11 +17,11 @@ class CreateAssistancesTable extends Migration
             $table->bigIncrements('id');
 
             $table->unsignedBigInteger('assistance_id')->index();
-            $table->foreign('assistance_id')->references('assistance_id')
+            $table->foreign('assistance_id')->references('id')
                 ->on('users');
 
             $table->unsignedBigInteger('doctor_id')->index();
-            $table->foreign('doctor_id')->references('doctor_id')
+            $table->foreign('doctor_id')->references('id')
                 ->on('users');
 
             $table->timestamps();

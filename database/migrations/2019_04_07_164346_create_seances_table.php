@@ -20,7 +20,7 @@ class CreateSeancesTable extends Migration
             $table->unsignedDecimal('price',65)->nullable();
 
             $table->unsignedBigInteger('doctor_id')->index();
-            $table->foreign('doctor_id')->references('doctor_id')->on('users');
+            $table->foreign('doctor_id')->references('id')->on('users');
 
         });
     }

@@ -20,11 +20,11 @@ class CreateAppointmentsTable extends Migration
             $table->longText('reason');
 
             $table->unsignedBigInteger('patient_id')->index();
-            $table->foreign('patient_id')->references('patient_id')
+            $table->foreign('patient_id')->references('id')
                 ->on('users');
 
             $table->unsignedBigInteger('calendar_id')->index();
-            $table->foreign('calendar_id')->references('calendar_id')
+            $table->foreign('calendar_id')->references('id')
                 ->on('calendars');
 
 

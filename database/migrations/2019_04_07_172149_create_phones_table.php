@@ -18,11 +18,11 @@ class CreatePhonesTable extends Migration
             $table->string('phone')->index();
 
             $table->unsignedBigInteger('establishment_id')->index()->nullable();
-            $table->foreign('establishment_id')->references('establishment_id')
+            $table->foreign('establishment_id')->references('id')
                 ->on('establishments');
 
             $table->unsignedBigInteger('user_id')->index()->nullable();
-            $table->foreign('user_id')->references('user_id')
+            $table->foreign('user_id')->references('id')
                 ->on('users');
 
             $table->timestamps();

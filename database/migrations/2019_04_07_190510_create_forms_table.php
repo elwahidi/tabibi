@@ -20,7 +20,7 @@ class CreateFormsTable extends Migration
             $table->longText('visit')->nullable();
 
             $table->unsignedBigInteger('appointment_id')->index();
-            $table->foreign('appointment_id')->references('appointment_id')
+            $table->foreign('appointment_id')->references('id')
                 ->on('appointments');
 
             $table->timestamps();

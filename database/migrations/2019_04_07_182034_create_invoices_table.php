@@ -22,15 +22,15 @@ class CreateInvoicesTable extends Migration
             $table->string('serial')->nullable();
 
             $table->unsignedBigInteger('establishment_id')->index();
-            $table->foreign('establishment_id')->references('establishment_id')
+            $table->foreign('establishment_id')->references('id')
                 ->on('establishments');
 
             $table->unsignedBigInteger('created_by')->index();
-            $table->foreign('created_by')->references('created_by')
+            $table->foreign('created_by')->references('id')
                 ->on('users');
 
             $table->unsignedBigInteger('payment_method_id')->index();
-            $table->foreign('payment_method_id')->references('payment_method_id')
+            $table->foreign('payment_method_id')->references('id')
                 ->on('payment_methods');
 
             $table->timestamps();

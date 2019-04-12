@@ -19,7 +19,7 @@ class CreateImgsTable extends Migration
             $table->string('img');
 
             $table->unsignedBigInteger('establishment_id')->index()->nullable();
-            $table->foreign('establishment_id')->references('establishment_id')
+            $table->foreign('establishment_id')->references('id')
                 ->on('establishments');
 
             $table->timestamps();

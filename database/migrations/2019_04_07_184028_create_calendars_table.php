@@ -21,12 +21,12 @@ class CreateCalendarsTable extends Migration
 
 
             $table->unsignedBigInteger('doctor_id')->index();
-            $table->foreign('doctor_id')->references('doctor_id')
+            $table->foreign('doctor_id')->references('id')
                 ->on('users');
 
 
             $table->unsignedBigInteger('establishment_id')->index();
-            $table->foreign('establishment_id')->references('establishment_id')
+            $table->foreign('establishment_id')->references('id')
                 ->on('establishments');
 
             $table->timestamps();

@@ -27,7 +27,7 @@ class CreateExperiencesTable extends Migration
             $table->year('end')->nullable();
 
             $table->unsignedBigInteger('doctor_id')->index();
-            $table->foreign('doctor_id')->references('doctor_id')
+            $table->foreign('doctor_id')->references('id')
                 ->on('users');
 
             $table->timestamps();

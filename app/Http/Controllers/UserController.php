@@ -13,7 +13,9 @@ class UserController extends Controller
     public function parameter()
     {
 
-        return view('user.parameter',['user'    => auth()->user() ]);
+        return view('user.parameter', [
+            'user'    => auth()->user()
+        ]);
 
     }
 
@@ -50,7 +52,7 @@ class UserController extends Controller
 
         auth()->user()->update($data);
 
-        session()->flash('success', 'votre identité a bien été mis à jour');
+        session()->flash('success', __('user.parameter.success'));
 
         return redirect()->route('home');
 
@@ -58,13 +60,19 @@ class UserController extends Controller
 
     public function psw()
     {
+
         return view('user.psw');
+
     }
 
     public function updatePsw(PswRequest $request)
     {
         auth()->user()->password = bcrypt($request->password);
+
         auth()->user()->save();
+
+        session()->flash('success', __('user.psw.success'));
+
         return redirect()->route('home');
 
     }

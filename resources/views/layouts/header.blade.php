@@ -11,11 +11,23 @@
                                     class="fa fa-bars font-24 text-gray"></i></a></div>
                     <ul class="menuzord-menu">
                         <li class="active"><a href="/"><i class="fa fa-home"></i>Accueil</a></li>
-                        <li class=""><a href="#"><i class="fa fa-user-md"></i>Vous êtes
-                                professionnel de santé ?</a></li>
-                        <li class="">
-                            <a href="{{ route('login') }}"><i class="fa fa-user"></i>Se connecter</a>
-                        </li>
+                        @if(!auth()->check())
+                            <li class=""><a href="#"><i class="fa fa-user-md"></i>Vous êtes
+                                    professionnel de santé ?</a></li>
+                            <li class="">
+                                <a href="{{ route('login') }}"><i class="fa fa-user"></i>Se connecter</a>
+                            </li>
+                            @else
+                            <li>
+                                <a href="#" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    <i class="fa fa-power-off text-danger"></i> Disconnect</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </li>
+
+                        @endif
                     </ul>
                 </nav>
             </div>

@@ -111,7 +111,13 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label>address</label>
-                                <input name="address" class="form-control" type="text" required>
+                                <input name="address" class="form-control" type="text" >
+
+                                @if ($errors->has('address'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('address') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                             <div class="form-group col-md-6">
                                 <label>ville</label>

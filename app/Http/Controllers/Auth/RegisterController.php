@@ -64,7 +64,7 @@ class RegisterController extends Controller
             'first_name'        => ['required', 'string', 'min:3', 'max:191'],
             'last_name'         => ['required', 'string', 'min:3', 'max:191'],
             'birth'             => ['required', 'date'],
-            'address'           => ['required','string','min:10','max:191'],
+            'address'           => ['nullable','string','min:10','max:191'],
             'sexe'              => ['required', 'int', 'exists:sexes,id'],
             'city'              => ['required', 'int', 'exists:cities,id'],
         ]);
@@ -82,7 +82,10 @@ class RegisterController extends Controller
 
         return $user->onStore(
             array_merge(
-                ['category' => Category::where('category','patient')->first()->id, 'face' => null],
+                [
+                    'category' => Category::where('category','patient')->first()->id,
+                    'face' => null
+                ],
                 $data
             )
         );

@@ -50,7 +50,7 @@ class LoginController extends Controller
     {
         $request->validate([
             $this->username() => 'required|email|string',
-            'password' => 'required|string',
+            'password' => 'required|string|min:8',
         ]);
     }
 }

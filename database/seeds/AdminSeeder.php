@@ -20,7 +20,7 @@ class AdminSeeder extends Seeder
             'birth'             => null,
             'address'           => "357, Boulevard Mohamed V -8 étage - 2000",
             'email'             => "pdg@ly.ly",
-            'password'          => "123456",
+            'password'          => "12345678",
             'category'          => 1,
             'sexe'              => 1,
             'city'              => 1,

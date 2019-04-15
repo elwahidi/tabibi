@@ -30,7 +30,7 @@ class ParameterRequest extends FormRequest
 
             'last_name'         => ['required', 'string', 'min:3', 'max:191'],
 
-            'birth'             => ['nullable', 'date'],
+            'birth'             => ['required', 'date'],
 
             'description'       => ['nullable', 'string', 'min:10'],
 

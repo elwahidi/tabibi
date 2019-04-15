@@ -27,6 +27,6 @@ class PswRule implements Rule
      */
     public function message()
     {
-        return trans('passwords.incorrect');
+        return trans('user.psw.incorrect');
     }
 }

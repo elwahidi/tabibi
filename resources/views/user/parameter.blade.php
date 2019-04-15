@@ -51,6 +51,7 @@
                                         @endif
                                     </div>
                                 </div>
+                                @if(auth()->user()->category->category !== 'patient')
                                 <div class="col-xs-6">
                                     <div class="form-group">
                                         <label for="description">description :</label>
@@ -62,6 +63,7 @@
                                         @endif
                                     </div>
                                 </div>
+                                @endif
                                 <div class="col-xs-6">
                                     <div class="form-group">
                                         <label for="email">email :</label>
